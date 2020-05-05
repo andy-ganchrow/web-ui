@@ -1,8 +1,9 @@
+import {input} from '@covid-modeling/api'
+import {Intensity} from '@covid-modeling/api/dist/src/model-input'
 import Joi from '@hapi/joi'
 import {useMemo} from 'react'
 import {SupportedParameter} from '../../lib/models'
 import {
-  Intensity,
   InterventionPeriod,
   StrategyDescriptions,
   StrategyKey
@@ -12,7 +13,6 @@ import SocialDistancingGraphic from '../../svg/SocialDistancingGraphic.svg'
 import Trash from '../../svg/Trash.svg'
 import Unacast from '../../svg/Unacast.svg'
 import Warn from '../../svg/Warn.svg'
-import {ISODate} from '../../types/model-runner'
 import formStyle from '../styles/form.module.css'
 import DateInput from './DateInput'
 import {ErrorList} from './ErrorMessage'
@@ -27,7 +27,7 @@ interface Props {
   onChange: (config: Partial<InterventionPeriod>) => void
   onChangeIntervention: (update: Pick<InterventionPeriod, StrategyKey>) => void
   remove: () => void
-  priorPeriodStartDate: ISODate | undefined
+  priorPeriodStartDate: input.ISODate | undefined
   error: Joi.ValidationError | null
   index: number
 }

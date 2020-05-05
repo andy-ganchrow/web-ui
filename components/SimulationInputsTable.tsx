@@ -1,12 +1,13 @@
+import {input} from '@covid-modeling/api'
+import {InterventionPeriod} from '@covid-modeling/api/dist/src/model-input'
 import {StrategyDescriptions} from '../lib/new-simulation-state'
 import Check from '../svg/Check.svg'
-import {InterventionPeriod, ModelInput} from '../types/model-runner'
 import LocalDate from './LocalDate'
 import styles from './SimulationInputsTable.module.css'
 import Table from './Table'
 
 type Props = {
-  inputs: ModelInput
+  inputs: input.ModelInput
 }
 
 export default function SimulationInputsTable(props: Props) {
